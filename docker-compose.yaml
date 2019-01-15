@@ -1,0 +1,14 @@
+version: '3'
+services:
+    docker-in-docker:
+        build: .
+        image: xyzrlee/docker-in-docker
+        privileged: true
+        #restart: unless-stopped
+        ports:
+            - 3901:3000/tcp
+        cap_add:
+            - ALL
+        volumes:
+            - .:/conf:ro
+        command: -f /conf/docker-in-docker.yaml

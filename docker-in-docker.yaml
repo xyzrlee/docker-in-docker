@@ -1,0 +1,6 @@
+version: '3'
+services:
+    dockerhost:
+        image: qoomon/docker-host
+        restart: unless-stopped
+        cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
